@@ -48,7 +48,7 @@
 
 
                                             <div class="form-group mb-3">
-                                                <label for="example-text-input" class="form-label">Pretasks Image</label>
+                                                <label for="example-text-input" class="form-label">Category Image</label>
                                                 <input class="form-control" name="image" type="file" id="image">
                                             </div>
 
@@ -59,7 +59,7 @@
                                             </div>
                                             <div class="mt-4">
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Add
-                                                    Pretasks</button>
+                                                    Category</button>
                                             </div>
                                         </div>
                                     </div>

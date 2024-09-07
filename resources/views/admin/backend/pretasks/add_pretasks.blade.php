@@ -17,36 +17,30 @@
                                 <li class="breadcrumb-item active">Add Pretasks</li>
                             </ol>
                         </div>
-
                     </div>
                 </div>
             </div>
             <!-- end page title -->
+            
             <div class="card">
                 <div class="row">
                     <div class="col-xl-9 col-lg-8">
                         <div class="card-body p-4">
-                            <form id="myForm" action="{{ route('pretasks.store') }}" method="post"
-                                enctype="multipart/form-data">
+                            <form id="myForm" action="{{ route('pretasks.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div>
                                             <div class="form-group mb-3">
                                                 <label for="example-text-input" class="form-label"> Pretasks Name</label>
-                                                <input class="form-control" name="category_name" type="text"
-                                                    id="example-text-input">
+                                                <input class="form-control" name="pretasks_name" type="text"
+                                                    id="example-text-input" value="{{ old('pretasks_name') }}">
                                             </div>
-
-
-
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="mt-3 mt-lg-0">
-
-
                                             <div class="form-group mb-3">
                                                 <label for="example-text-input" class="form-label">Pretasks Image</label>
                                                 <input class="form-control" name="image" type="file" id="image">
@@ -55,69 +49,54 @@
                                             <div class="mb-3">
                                                 <img id="showImage" src="{{ url('upload/no_image.jpg') }}" alt=""
                                                     class="img-fluid rounded-block d-block p-1 bg-primary" width="110">
-
                                             </div>
+
                                             <div class="mt-4">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light">Add
-                                                    Pretasks</button>
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                    Add Pretasks
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
                         </div>
-
-
-
-
-
-
-
-                        <!-- end tab content -->
                     </div>
-                    <!-- end col -->
-
-
-                    <!-- end col -->
                 </div>
-                <!-- end row -->
-
             </div> <!-- container-fluid -->
-            </form>
         </div>
     </div>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#image').change(function(e) { // Corrected selector
+            $('#image').change(function(e) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     $('#showImage').attr('src', e.target.result);
                 }
-                reader.readAsDataURL(e.target.files[0]); // Corrected file access
+                reader.readAsDataURL(e.target.files[0]);
             });
         });
     </script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('#myForm').validate({
                 rules: {
-                    category_name: {
+                    pretasks_name: {
                         required: true,
                     },
                     image: {
                         required: true,
                     },
-
                 },
                 messages: {
-                    category_name: {
+                    pretasks_name: {
                         required: 'You HAVE to Enter a Pretasks Name',
                     },
                     image: {
                         required: 'You HAVE to provide some image',
                     },
-
-
                 },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
