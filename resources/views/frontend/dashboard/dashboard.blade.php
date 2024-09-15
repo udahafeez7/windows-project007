@@ -1,4 +1,6 @@
 @include('frontend.dashboard.header')
+
+<!-- jQuery and Toastr CSS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
@@ -113,6 +115,24 @@
                             </div>
                         </div>
 
+                        <!-- Learning Material Section -->
+                        <div class="tab-pane fade" id="learning" role="tabpanel" aria-labelledby="learning-tab">
+                            <h4 class="font-weight-bold mt-0 mb-4">Self-Paced Learning Material</h4>
+                        
+                            <!-- Learning Material Cards -->
+                            <div class="row mb-4 pb-2">
+                                <div class="col-md-6">
+                                    <div class="card offer-card shadow-sm">
+                                        <div class="card-body">
+                                            <img src="{{ asset('frontend/img/list/1.png') }}" class="img-fluid w-100" alt="MCDM">
+                                            <h6 class="card-subtitle mt-3 mb-2 text-block">Multi Criteria Decision Making</h6>
+                                            <a href="{{ route('user.materials') }}" class="card-link">KNOW MORE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Technical Software Intermediaries Section -->
                         <div class="tab-pane fade" id="favourites" role="tabpanel" aria-labelledby="favourites-tab">
                             <h4 class="font-weight-bold mt-0 mb-4">Software Intermediaries</h4>
@@ -221,7 +241,7 @@
             reader.onload = function(e) {
                 $('#showImage').attr('src', e.target.result);
             }
-            reader.readAsDataURL(e.target.files['0']);
+            reader.readAsDataURL(e.target.files[0]);
         })
     });
 </script>
