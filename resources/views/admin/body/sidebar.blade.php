@@ -7,7 +7,7 @@
                 <li class="menu-title" data-key="t-menu">Menu</li>
 
                 <li>
-                    <a href="index.html">
+                    <a href="{{ route('admin.dashboard') }}">
                         <i data-feather="home"></i>
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
@@ -44,8 +44,46 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('add.category') }}">
+                            <a href="{{ route('add.pretasks') }}">
                                 <span data-key="t-chat">Add Pretasks</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Cognitive Material</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('all.material') }}">
+                                <span data-key="t-calendar">All Material</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('add.material') }}">
+                                <span data-key="t-chat">Add Material</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Gallery</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('all.gallery') }}">
+                                <span data-key="t-calendar">All Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('add.gallery') }}">
+                                <span data-key="t-chat">Add Gallery</span>
                             </a>
                         </li>
                     </ul>
@@ -67,11 +105,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="briefcase"></i>
-                        <span data-key="t-components">Components</span>
+                        <span data-key="t-components">Role and Permission</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ui-alerts.html" data-key="t-alerts">Alerts</a></li>
-                        <li><a href="ui-buttons.html" data-key="t-buttons">Buttons</a></li>
+                        <li><a href="{{ route('all.permission') }}" data-key="t-alerts">All Permission</a></li>
+                        <li><a href="{{ route('all.roles') }}" data-key="t-buttons">All Roles</a></li>
+                        <li><a href="{{ route('all.roles.permission') }}" data-key="t-buttons">Add Roles to Existing
+                                Permission</a></li>
                     </ul>
                 </li>
 

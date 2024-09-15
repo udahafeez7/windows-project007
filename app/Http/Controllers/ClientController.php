@@ -81,10 +81,10 @@ class ClientController extends Controller
 
     public function ClientProfile()
     {
-        // $city = City::latest()->get();
+        $city = City::latest()->get();
         $id = Auth::guard('client')->id();
         $profileData = Client::find($id);
-        // return view('client.client_profile', compact('profileData', 'city'));
+        return view('client.client_profile', compact('profileData', 'city'));
     }
     // End Method
 

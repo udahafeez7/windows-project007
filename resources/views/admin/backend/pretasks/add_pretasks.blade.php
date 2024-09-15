@@ -21,12 +21,13 @@
                 </div>
             </div>
             <!-- end page title -->
-            
+
             <div class="card">
                 <div class="row">
                     <div class="col-xl-9 col-lg-8">
                         <div class="card-body p-4">
-                            <form id="myForm" action="{{ route('pretasks.store') }}" method="post" enctype="multipart/form-data">
+                            <form id="myForm" action="{{ route('pretasks.store') }}" method="post"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
